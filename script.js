@@ -34,11 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Efeito de scroll no header
     const header = document.querySelector('.header');
+    const hero = document.querySelector('.hero');
     
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const heroHeight = hero ? hero.offsetHeight : 0;
         
-        if (scrollTop > 50) {
+        // Só aplica o efeito quando sair completamente da hero section
+        if (scrollTop > heroHeight * 0.8) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
