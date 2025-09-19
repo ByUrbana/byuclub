@@ -391,7 +391,6 @@ body {
   display: block;
 }
 
-
 /* Footer */
 .footer {
   background: #1a1a1a;
@@ -574,11 +573,13 @@ body {
   }
 
   .hero-card {
+    min-width: 300px;
+
     padding: 25px 20px;
   }
 
   .hero-logo-img {
-    height: 35px;
+    height: 50px;
   }
 
   .about-title {
@@ -597,11 +598,6 @@ body {
 
   .card-image {
     max-width: 200px;
-  }
-
-  .service-image {
-    width: 150px;
-    height: 150px;
   }
 }
 
