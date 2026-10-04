@@ -246,6 +246,7 @@ body {
 
 .services-title,
 .testimonials-title {
+  margin-bottom: 58px;
   color: var(--black);
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 800;
@@ -257,61 +258,13 @@ body {
   max-width: 720px;
 }
 
-.services-heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 32px;
-  margin-bottom: 58px;
-}
-
-.services-controls {
-  display: flex;
-  flex: 0 0 auto;
-  gap: 10px;
-}
-
-.carousel-button {
-  width: 48px;
-  height: 48px;
-  border: 1px solid var(--black);
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--black);
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
-}
-
-.carousel-button:hover:not(:disabled) {
-  background: var(--black);
-  color: var(--white);
-}
-
-.carousel-button:disabled {
-  opacity: 0.28;
-  cursor: default;
-}
-
 .services-grid {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc((100% - 40px) / 3);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  overflow-x: auto;
-  padding: 4px 2px 16px;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  overscroll-behavior-inline: contain;
-}
-
-.services-grid::-webkit-scrollbar {
-  display: none;
 }
 
 .service-card {
-  min-width: 0;
-  scroll-snap-align: start;
   text-align: left;
 }
 
@@ -512,9 +465,7 @@ body {
 .cta-button:focus-visible,
 .newsletter-button:focus-visible,
 .social-link:focus-visible,
-.newsletter-input:focus-visible,
-.carousel-button:focus-visible,
-.services-grid:focus-visible {
+.newsletter-input:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 3px;
 }
@@ -543,7 +494,7 @@ body {
   }
 
   .services-grid {
-    grid-auto-columns: calc((100% - 20px) / 2);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .about-content {
@@ -591,11 +542,6 @@ body {
     padding: 76px 0;
   }
 
-  .services-heading {
-    align-items: center;
-    margin-bottom: 42px;
-  }
-
   .footer-content {
     grid-template-columns: 1fr;
   }
@@ -606,14 +552,8 @@ body {
     width: min(100% - 28px, 1200px);
   }
 
-  .services-heading {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 24px;
-  }
-
   .services-grid {
-    grid-auto-columns: 86%;
+    grid-template-columns: 1fr;
   }
 
   .service-image {
