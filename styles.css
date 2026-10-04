@@ -139,6 +139,7 @@ body {
 .hero-card {
   width: 100%;
   padding: 42px;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.94);
   border: 1px solid rgba(255, 255, 255, 0.55);
   box-shadow: 0 24px 65px rgba(0, 0, 0, 0.3);
@@ -200,6 +201,7 @@ body {
   position: relative;
   padding: 40px 30px;
   overflow: hidden;
+  border-radius: 20px;
   background: var(--white);
   border: 1px solid var(--gray-200);
   text-align: center;
@@ -270,6 +272,7 @@ body {
   height: 360px;
   margin-bottom: 18px;
   overflow: hidden;
+  border-radius: 20px;
   background: var(--gray-100);
 }
 
@@ -332,6 +335,7 @@ body {
   width: 100%;
   max-width: 610px;
   height: auto;
+  border-radius: 20px;
   box-shadow: 0 28px 60px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
@@ -354,6 +358,7 @@ body {
 
 .testimonial-card {
   padding: 32px;
+  border-radius: 20px;
   background: var(--gray-100);
   border-top: 3px solid var(--black);
 }
