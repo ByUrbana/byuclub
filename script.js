@@ -89,12 +89,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 setTimeout(() => {
                     button.textContent = '¡Suscrito!';
-                    button.style.background = '#10b981';
+                    button.style.background = '#111111';
                     
                     setTimeout(() => {
                         button.textContent = originalText;
                         button.disabled = false;
-                        button.style.background = '#3b82f6';
+                        button.style.background = '#111111';
                         this.querySelector('.newsletter-input').value = '';
                     }, 2000);
                 }, 1000);
@@ -121,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Parallax effect no hero
-    const hero = document.querySelector('.hero');
     if (hero) {
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
@@ -209,6 +208,11 @@ style.textContent = `
         .nav.active .nav-list {
             flex-direction: column;
             gap: 15px;
+        }
+
+        .nav.active .nav-link {
+            color: #111;
+            text-shadow: none;
         }
         
         .mobile-menu-toggle.active i:before {
