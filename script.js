@@ -64,51 +64,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observar elementos para animação
-    const animatedElements = document.querySelectorAll('.feature-card, .testimonial-card');
+    const animatedElements = document.querySelectorAll('.feature-card, .service-card, .testimonial-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
-
-    // Navegación manual del carrusel de categorías
-    const categoriesCarousel = document.querySelector('#categories-carousel');
-    const previousCategoryButton = document.querySelector('.carousel-button-prev');
-    const nextCategoryButton = document.querySelector('.carousel-button-next');
-
-    if (categoriesCarousel && previousCategoryButton && nextCategoryButton) {
-        const getScrollStep = () => {
-            const firstCard = categoriesCarousel.querySelector('.service-card');
-            const gap = parseFloat(getComputedStyle(categoriesCarousel).columnGap) || 0;
-            return firstCard ? firstCard.getBoundingClientRect().width + gap : categoriesCarousel.clientWidth;
-        };
-
-        const updateCategoryButtons = () => {
-            const maxScroll = categoriesCarousel.scrollWidth - categoriesCarousel.clientWidth;
-            previousCategoryButton.disabled = categoriesCarousel.scrollLeft <= 2;
-            nextCategoryButton.disabled = categoriesCarousel.scrollLeft >= maxScroll - 2;
-        };
-
-        const moveCategories = (direction) => {
-            categoriesCarousel.scrollBy({
-                left: direction * getScrollStep(),
-                behavior: 'smooth'
-            });
-        };
-
-        previousCategoryButton.addEventListener('click', () => moveCategories(-1));
-        nextCategoryButton.addEventListener('click', () => moveCategories(1));
-        categoriesCarousel.addEventListener('scroll', updateCategoryButtons, { passive: true });
-        categoriesCarousel.addEventListener('keydown', (event) => {
-            if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-                event.preventDefault();
-                moveCategories(event.key === 'ArrowLeft' ? -1 : 1);
-            }
-        });
-        window.addEventListener('resize', updateCategoryButtons);
-        updateCategoryButtons();
-    }
     
     // Newsletter form
     const newsletterForm = document.querySelector('.newsletter-form');
@@ -127,12 +89,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 setTimeout(() => {
                     button.textContent = '¡Suscrito!';
-                    button.style.background = '#111111';
+                    button.style.background = '#10b981';
                     
                     setTimeout(() => {
                         button.textContent = originalText;
                         button.disabled = false;
-                        button.style.background = '#111111';
+                        button.style.background = '#3b82f6';
                         this.querySelector('.newsletter-input').value = '';
                     }, 2000);
                 }, 1000);
@@ -159,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Parallax effect no hero
+    const hero = document.querySelector('.hero');
     if (hero) {
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
@@ -246,11 +209,6 @@ style.textContent = `
         .nav.active .nav-list {
             flex-direction: column;
             gap: 15px;
-        }
-
-        .nav.active .nav-link {
-            color: #111;
-            text-shadow: none;
         }
         
         .mobile-menu-toggle.active i:before {
